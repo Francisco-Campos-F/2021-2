@@ -54,7 +54,7 @@ Bienvenido al sitio web del curso de Estructuras de Datos y Algoritmos. En esta 
 | Clase | 14 | Heaps | 25/10 | [Grabación](https://youtu.be/rRpZbmlmpDU) | [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/eb8a3938caf7d106e1870f37ec67c3b331356b4d/Clases/12%20Heaps%20&%20DSU.pdf) |
 | Clase | 15 | Heaps & Sets | 27/10 | [Grabación](https://youtu.be/kcR3vBXO0_Y) | [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/eb8a3938caf7d106e1870f37ec67c3b331356b4d/Clases/12%20Heaps%20&%20DSU.pdf) |
 | Ayudantía | 8 | Heaps & Sets | 29/10 | [Grabación](https://youtu.be/jfBcQ1TT3RQ) | [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Ayudant%C3%ADas/Ayudant%C3%ADa%208%20-%20Heap/Ayudant%C3%ADa%208_%20Heap.pdf) |
-| Clase | 16 | Sorting en O(n) | 03/11 | [Grabación]() | [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/13.%20sortEnO(n).pdf) |
+| Clase | 16 | Sorting en O(n) | 03/11 | [Grabación](https://youtu.be/kzMpShQ_abw) | [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/13.%20sortEnO(n).pdf) |
 
 
 ## Equipo
