@@ -73,7 +73,7 @@ Bienvenido al sitio web del curso de Estructuras de Datos y Algoritmos. En esta 
 |   Clase   |   16   |Sorting en O(n) | 03/11  | [Grabación](https://youtu.be/kzMpShQ_abw) |[Diapos](<https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/13.%20sortEnO(n).pdf>)|
 | Ayudantía |   9    |   Repaso I2    | 05/11  | [Grabación](https://youtu.be/iPt6YTumUmk) |[Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Ayudant%C3%ADas/Ayudantia%20I2/Ayudantia%20Repaso%20I2.pdf) |
 | Ayudantía |  9.1   | Faltante Repaso I2 | 05/11  | [Grabación](https://youtu.be/gvE1xrqMq3o) |[Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Ayudant%C3%ADas/Ayudantia%20I2/Ayudantia%20Repaso%20I2.pdf) |
-|   Clase   |   17   |DFS y Grafos | 10/11  | [Grabación]()| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/12.%20Grafos%20&%20Depth%20First%20Search.pdf)|
+|   Clase   |   17   |DFS y Grafos | 10/11  | [Grabación](https://youtu.be/LpvG2IztcHs)| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/12.%20Grafos%20&%20Depth%20First%20Search.pdf)|
 
 ## Equipo
 
