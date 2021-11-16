@@ -75,7 +75,7 @@ Bienvenido al sitio web del curso de Estructuras de Datos y Algoritmos. En esta 
 | Ayudantía |  9.1   | Faltante Repaso I2 | 05/11  | [Grabación](https://youtu.be/gvE1xrqMq3o) |[Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Ayudant%C3%ADas/Ayudantia%20I2/Ayudantia%20Repaso%20I2.pdf) |
 |   Clase   |   17   | DFS y Grafos | 10/11  | [Grabación](https://youtu.be/LpvG2IztcHs)| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/12.%20Grafos%20&%20Depth%20First%20Search.pdf)|
 |   Ayudantía   |   10   | DFS I y Grafos | 12/11  | [Grabación](https://youtu.be/j4P8MM9HHpc)| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Ayudant%C3%ADas/Ayudant%C3%ADa%2010%20-%20DFS%20I/Ayudant%C3%ADa%2010.pdf)|
-|   Clase   |   18   | Aplicaciones DFS | 15/11  | [Grabación]()| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/13.%20DFS-applications.pdf)|
+|   Clase   |   18   | Aplicaciones DFS | 15/11  | [Grabación](https://youtu.be/FPn1D9-EPwg)| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/13.%20DFS-applications.pdf)|
 
 ## Equipo
 ### Profesores
