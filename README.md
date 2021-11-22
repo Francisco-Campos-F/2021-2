@@ -78,6 +78,8 @@ Bienvenido al sitio web del curso de Estructuras de Datos y Algoritmos. En esta 
 |   Clase   |   18   | Aplicaciones DFS | 15/11  | [Grabación](https://youtu.be/FPn1D9-EPwg)| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/13.%20DFS-applications.pdf)|
 |   Clase   |   19   | BFS + Dijkstra | 17/11  | [Grabación](https://youtu.be/3WBKEkUnnvw)| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/17.%20BFS+Dijkstra.pdf)|
 |   Ayudantía   |   11   | DFS II, topSort y Kosaraju | 19/11  | [Grabación](https://youtu.be/eWtRhsgsySQ)| [Diapos](https://github.com/IIC2133-PUC/2021-2/tree/master/Ayudant%C3%ADas/Ayudant%C3%ADa%2011%20-%20DFS%20II%2C%20topSort%20y%20Kosaraju)|
+|   Clase   |   20   | MST & Kruskal | 22/11  | [Grabación]()| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/18.%20MSTs-Kruskal.pdf)|
+
 ## Equipo
 ### Profesores
 
