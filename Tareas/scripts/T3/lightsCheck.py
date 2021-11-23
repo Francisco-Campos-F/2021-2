@@ -15,11 +15,12 @@ def get_positions(input_file):
     with open(input_file, "r") as f:
         while line != "":
             line = f.readline()
-            position_x, colour_x, position_y, colour_y = line.split(" ")
-            position_x, position_y = int(position_x), int(position_y)
-            positions.add(position_x)
-            positions.add(position_y)
-            cost += abs(position_y - position_x)
+            if line != "":
+                position_x, colour_x, position_y, colour_y = line.split(" ")[0], line.split(" ")[1].strip("\n"), line.split(" ")[2], line.split(" ")[3].strip("\n")
+                position_x, position_y = int(position_x), int(position_y)
+                positions.add(position_x)
+                positions.add(position_y)
+                cost += abs(position_y - position_x)
     return positions, cost
 
 def fetch_without_colour(input_file, colour):
@@ -28,11 +29,12 @@ def fetch_without_colour(input_file, colour):
     with open(input_file, "r") as f:
         while line != "":
             line = f.readline()
-            position_x, colour_x, position_y, colour_y = line.split(" ")
-            position_x, position_y = int(position_x), int(position_y)
-            if colour_x != colour and colour_x != colour:
-                positions.add(position_x)
-                positions.add(position_y)
+            if line != "":
+                position_x, colour_x, position_y, colour_y = line.split(" ")[0], line.split(" ")[1].strip("\n"), line.split(" ")[2], line.split(" ")[3].strip("\n")
+                position_x, position_y = int(position_x), int(position_y)
+                if colour_x != colour and colour_x != colour:
+                    positions.add(position_x)
+                    positions.add(position_y)
     return positions
 
 def check_valid(input_file):
@@ -51,11 +53,13 @@ def fetch_original_positions(input_file):
     original_positions = set()
     line = True
     with open(input_file, "r") as f:
+        line = f.readline()
         while line != "":
             line = f.readline()
-            position, colour = line.split(" ")
-            position = int(position)
-            original_positions.add(position)
+            if line != "":
+                position, colour = line.split(" ")[0], line.split(" ")[1].strip("\n")
+                position = int(position)
+                original_positions.add(position)
     return original_positions
 
 def main():
@@ -71,8 +75,10 @@ def main():
     position_B, position_R = check_valid(output_file)
     if check_strong_connections(position_R, position_B, original_positions):
         print("Output es Correcto")
+        print("Puntaje NA")
     else:
         print("Output es Incorrecto")
+        print("Puntaje NA")
     return
     
 def check_params():
@@ -82,5 +88,4 @@ def check_params():
 
 if __name__ == "__main__":
     check_params()
-    # Falta añadir comparacion con target cost
     main()
