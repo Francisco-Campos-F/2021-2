@@ -30,16 +30,16 @@ def check_enhance(input_file, output_file):
                     r1,c1,r2,c2 = [int(i) for i in line.split(' ')]
                     output_points.add((r1,c1))
                     output_points.add((r2,c2))
-                    C += sqrt((r1 - r2)**2 + (c1 - c2)**2)
+                    C += abs(r1 - r2) + abs(c1 - c2)
                 except:
                     return False
 
     
     for point in input_points:
         if point not in output_points:
-            return -1
+            return False
 
-    return (1 - C/D) # enhance percentage
+    return (1 - C/D)
 
 
 if __name__ == '__main__':
