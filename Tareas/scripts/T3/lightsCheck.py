@@ -18,6 +18,7 @@ def get_positions(input_file):
             if line != "":
                 position_x, colour_x, position_y, colour_y = line.split(" ")[0], line.split(" ")[1].strip("\n"), line.split(" ")[2], line.split(" ")[3].strip("\n")
                 position_x, position_y = int(position_x), int(position_y)
+                colour_x, colour_y = colour_x.lower(), colour_y.lower()
                 positions.add(position_x)
                 positions.add(position_y)
                 cost += abs(position_y - position_x)
@@ -32,6 +33,7 @@ def fetch_without_colour(input_file, colour):
             if line != "":
                 position_x, colour_x, position_y, colour_y = line.split(" ")[0], line.split(" ")[1].strip("\n"), line.split(" ")[2], line.split(" ")[3].strip("\n")
                 position_x, position_y = int(position_x), int(position_y)
+                colour_x, colour_y = colour_x.lower(), colour_y.lower()
                 if colour_x != colour and colour_y != colour:
                     positions.add(position_x)
                     positions.add(position_y)
@@ -65,7 +67,6 @@ def check_strong_connections(positionsR, positionsB, original_positions, input_f
 
     positionsBb = positionsB.intersection(positionsb)
     positionsRr = positionsR.intersection(positionsr)
-
     positionr_equal = positionsRr == positionsR
     positionb_equal = positionsBb == positionsB
 
