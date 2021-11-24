@@ -31,7 +31,20 @@ class Graph:
         for edge in node.edges:
             if not edge.visited and edge.col != not_color:
                 self.dfs(edge, not_color)
-    
+
+    def iterative_dfs_with_cost(self, node):
+        stack = [node]
+        cost = 0
+        while len(stack) > 0:
+            current = stack.pop()
+            if current.visited == False:
+                current.visited = True
+                for edge in current.edges:
+                    if not edge.visited:
+                        stack.append(edge)
+                        cost += abs(current.pos - edge.pos)
+        return cost
+
     def iterative_dfs(self, node, not_color):
         stack = [node]
         while len(stack) > 0:
@@ -95,12 +108,6 @@ def build_graph_edges(graph, file_name):
                     print("Error: Node not found")
                     sys.exit(1)
 
-def find_cost(graph):
-    cost = 0
-    for edge in graph.edges:
-        cost += abs(edge[0].pos - edge[1].pos)
-    return cost
-
 def main():
     graph = Graph()
     check_params()
@@ -124,7 +131,10 @@ def main():
         print("Red-Green is not connected")
         sys.exit(1)
     
-    cost = find_cost(graph)
+    graph.clear_visited()
+    node = graph.find_first_node_without_color('x')
+    cost = graph.iterative_dfs_with_cost(node)
+
     print(f"Cost: {cost}")
     return
     
