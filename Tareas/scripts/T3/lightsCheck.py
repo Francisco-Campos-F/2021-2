@@ -1,113 +1,135 @@
 import sys
 
-def check_correctness(output_file, original_positions):
-    obtained_positions, cost = get_positions(output_file)
-    for element in original_positions:
-        if element not in obtained_positions:
-            print(f"Error: {element} not in obtained_positions")
-            return 0, False
-    return cost, True
+class Node:
+    def __init__(self, pos, col):
+        self.pos = pos
+        self.col = col
+        self.edges = []
+        self.visited = False
 
-def get_positions(input_file):
-    positions = set()
-    cost = 0
-    with open(input_file, "r") as f:
-        ammount = int(f.readline().strip("\n"))
-        for i in range(ammount):
-            line = f.readline()
-            if line != "":
-                position_x, colour_x, position_y, colour_y = line.split(" ")[0], line.split(" ")[1].strip("\n"), line.split(" ")[2], line.split(" ")[3].strip("\n")
-                position_x, position_y = int(position_x), int(position_y)
-                colour_x, colour_y = colour_x.lower(), colour_y.lower()
-                positions.add(position_x)
-                positions.add(position_y)
-                cost += abs(position_y - position_x)
-    return positions, cost
+class Graph:
+    def __init__(self):
+        self.nodes = []
+        self.edges = []
 
-def fetch_without_colour(input_file, colour):
-    positions = set()
-    with open(input_file, "r") as f:
-        ammount = int(f.readline().strip("\n"))
-        for i in range(ammount):
-            line = f.readline()
-            if line != "":
-                position_x, colour_x, position_y, colour_y = line.split(" ")[0], line.split(" ")[1].strip("\n"), line.split(" ")[2], line.split(" ")[3].strip("\n")
-                position_x, position_y = int(position_x), int(position_y)
-                colour_x, colour_y = colour_x.lower(), colour_y.lower()
-                if colour_x != colour and colour_y != colour:
-                    positions.add(position_x)
-                    positions.add(position_y)
-    return positions
+    def add_node(self, pos, col):
+        node = Node(pos, col)
+        self.nodes.append(node)
+        return node
 
-def check_valid(input_file):
-    position_R = fetch_without_colour(input_file, "b")
-    position_B = fetch_without_colour(input_file, "r")
-    return position_B, position_R
+    def clear_visited(self):
+        for node in self.nodes:
+            node.visited = False
 
-def get_original_positions_by_colour(input_file, colour):
-    positions = set()
-    with open(input_file, "r") as f:
-        ammount = int(f.readline().strip("\n"))
-        for i in range(ammount):
-            line = f.readline()
-            if line != "":
-                position_x, colour_x = line.split(" ")[0], line.split(" ")[1].strip("\n")
-                position_x = int(position_x)
-                if colour_x == colour:
-                    positions.add(position_x)
-    return positions    
-                
-def check_strong_connections(positionsR, positionsB, original_positions, input_file):
-    positionsr = get_original_positions_by_colour(input_file, "r")
-    positionsg = get_original_positions_by_colour(input_file, "g")
-    positionsb = get_original_positions_by_colour(input_file, "b")
+    def add_edge(self, node1, node2):
+        self.edges.append((node1, node2))
+        node1.edges.append(node2)
+        node2.edges.append(node1)
 
-    positionsb = positionsb.union(positionsg)
-    positionsr = positionsr.union(positionsg)
+    def dfs(self, node, not_color):
+        node.visited = True
+        for edge in node.edges:
+            if not edge.visited and edge.col != not_color:
+                self.dfs(edge, not_color)
+    
+    def iterative_dfs(self, node, not_color):
+        stack = [node]
+        while len(stack) > 0:
+            current = stack.pop()
+            if current.col != not_color:
+                current.visited = True
+                for edge in current.edges:
+                    if not edge.visited and edge.col != not_color:
+                        stack.append(edge)
 
-    positionsBb = positionsB.intersection(positionsb)
-    positionsRr = positionsR.intersection(positionsr)
-    positionr_equal = positionsRr == positionsR
-    positionb_equal = positionsBb == positionsB
+    def find_first_node_without_color(self, color):
+        for node in self.nodes:
+            if node.col != color:
+                return node
+        return None
 
-    if positionr_equal and positionb_equal:
+    def check_graph(self, not_color):
+        for node in self.nodes:
+            if node.col != not_color:
+                if node.visited == False:
+                    print(f"Error: node {node.pos} {node.col} not visited")
         return True
-    print(f"Error: no esta conectado dada las condiciones del problema")
-    return False
 
-def fetch_original_positions(input_file):
-    original_positions = set()
-    line = True
-    with open(input_file, "r") as f:
-        ammount = int(f.readline().strip("\n"))
-        for i in range(ammount):
+    def binary_search_nodes(self, pos):
+        low = 0
+        high = len(self.nodes) - 1
+        while low <= high:
+            mid = (low + high) // 2
+            if self.nodes[mid].pos == pos:
+                return self.nodes[mid]
+            elif self.nodes[mid].pos > pos:
+                high = mid - 1
+            else:
+                low = mid + 1
+        return None    
+
+def build_graph_nodes(graph, file_name):
+    with open(file_name) as f:
+        amount_nodes = int(f.readline())
+        for i in range(amount_nodes):
+                line = f.readline()
+                if line:
+                    pos, col = int(line.split(' ')[0]), line.split(' ')[1].strip('\n')
+                    graph.add_node(pos, col)
+
+def build_graph_edges(graph, file_name):
+    with open(file_name) as f:
+        amount_edges = int(f.readline())
+        for i in range(amount_edges):
             line = f.readline()
-            if line != "":
-                position, colour = line.split(" ")[0], line.split(" ")[1].strip("\n")
-                position = int(position)
-                original_positions.add(position)
-    return original_positions
+            if line:
+                pos_x, col_x, pos_y, col_y = int(line.split(' ')[0]), line.split(' ')[1], int(line.split(' ')[2]), line.split(' ')[3].strip('\n')
+                node_x = graph.binary_search_nodes(pos_x)
+                node_y = graph.binary_search_nodes(pos_y)
+                colors_equal_x = node_x.col == col_x.lower()
+                colors_equal_y = node_y.col == col_y.lower()
+                color_equal = colors_equal_x and colors_equal_y
+                if node_x and node_y and color_equal:
+                    graph.add_edge(node_x, node_y)
+                else:
+                    print("Error: Node not found")
+                    sys.exit(1)
+
+def find_cost(graph):
+    cost = 0
+    for edge in graph.edges:
+        cost += abs(edge[0].pos - edge[1].pos)
+    return cost
 
 def main():
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
-    original_positions = fetch_original_positions(input_file)
-    cost, output = check_correctness(output_file, original_positions)
-    if output:
-        print(f"Output pose los mismos elementos de input con costo: {cost}")
+    graph = Graph()
+    check_params()
+    build_graph_nodes(graph, sys.argv[1])
+    build_graph_edges(graph, sys.argv[2])
+    node = graph.find_first_node_without_color('r')
+    graph.iterative_dfs(node, "r")
+    if graph.check_graph("r"):
+        print("Blue-Green is connected")
     else:
-        print(f"Output pose diferentes elementos que el input")
-        return
+        print("Blue-Green is not connected")
+        sys.exit(1)
 
-    position_B, position_R = check_valid(output_file)
-    if check_strong_connections(position_R, position_B, original_positions, input_file):
-        print("Output es Correcto")
-        print("Puntaje NA")
+    graph.clear_visited()
+
+    node = graph.find_first_node_without_color('b')
+    graph.iterative_dfs(node, "b")
+    if graph.check_graph("b"):
+        print("Red-Green is connected")
     else:
-        print("Output es Incorrecto")
-        print("Puntaje 0")
+        print("Red-Green is not connected")
+        sys.exit(1)
+    
+    cost = find_cost(graph)
+    print(f"Cost: {cost}")
     return
     
+
+
 def check_params():
     if len(sys.argv) < 3:
         print("Usage: python check_lights.py <input_file> <output_file>")
