@@ -22,7 +22,6 @@ class Graph:
             node.visited = False
 
     def add_edge(self, node1, node2):
-        # check if edge already exists
         for edge in node1.edges:
             if edge.pos == node2.pos:
                 return
