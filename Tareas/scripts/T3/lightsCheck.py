@@ -84,6 +84,12 @@ class Graph:
                 low = mid + 1
         return None    
 
+    def brute_search_node(self, pos):
+        for node in self.nodes:
+            if node.pos == pos:
+                return node
+        return None
+
 def build_graph_nodes(graph, file_name):
     with open(file_name) as f:
         amount_nodes = int(f.readline())
@@ -98,12 +104,20 @@ def build_graph_edges(graph, file_name):
         amount_edges = int(f.readline())
         for i in range(amount_edges):
             line = f.readline()
-            if line:
+            if line != "":
+                print(line)
                 pos_x, col_x, pos_y, col_y = int(line.split(' ')[0]), line.split(' ')[1], int(line.split(' ')[2]), line.split(' ')[3].strip('\n')
                 node_x = graph.binary_search_nodes(pos_x)
                 node_y = graph.binary_search_nodes(pos_y)
-                colors_equal_x = node_x.col == col_x.lower()
-                colors_equal_y = node_y.col == col_y.lower()
+                if not node_x or not node_y:
+                    node_x = graph.brute_search_node(pos_x)
+                    node_y = graph.brute_search_node(pos_y)
+                if not node_x or not node_y:
+                    print("Node not on original")
+                    sys.exit(1)
+                print(node_x.col, node_y.col)
+                colors_equal_x = node_x.col == col_x.strip().lower()
+                colors_equal_y = node_y.col == col_y.strip().lower()
                 color_equal = colors_equal_x and colors_equal_y
                 if node_x and node_y and color_equal:
                     graph.add_edge(node_x, node_y)
