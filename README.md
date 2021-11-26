@@ -80,10 +80,10 @@ Bienvenido al sitio web del curso de Estructuras de Datos y Algoritmos. En esta 
 |   Ayudantía   |   11   | DFS II, topSort y Kosaraju | 19/11  | [Grabación](https://youtu.be/eWtRhsgsySQ)| [Diapos](https://github.com/IIC2133-PUC/2021-2/tree/master/Ayudant%C3%ADas/Ayudant%C3%ADa%2011%20-%20DFS%20II%2C%20topSort%20y%20Kosaraju)|
 |   Clase   |   20   | MST & Kruskal | 22/11  | [Grabación](https://youtu.be/oN40_OP78JU)| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/18.%20MSTs-Kruskal.pdf)|
 |   Clase C   |   C   | Algoritmos Codiciosos | 25/11  | [Grabación](https://youtu.be/HG36BlN1To0)| [Diapos]()|
+|   Ayudantía   |   12   | BFS, Dikstra y MST | 26/11  | [Grabación](https://www.youtube.com/watch?v=KlOvLEBp_hI)| [Diapos](https://github.com/IIC2133-PUC/2021-2/tree/master/Ayudant%C3%ADas/Ayudant%C3%ADa%2012%20-%20BFS%2C%20Dikstra%20y%20MST)|
 
 ## Equipo
 ### Profesores
-
 | Nombre  | Sección | Email |
 | :-------------- | :------ | :---------------- |
 | Yadran Eterovic | 1  | yadran@ing.puc.cl |
