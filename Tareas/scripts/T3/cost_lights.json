@@ -1,17 +1,10 @@
 {
   "easy": [
-    { "test_path": "tests/easy_0.txt", "test_name": "easy_0", "cost": 99968 },
-    { "test_path": "tests/easy_1.txt", "test_name": "easy_1", "cost": 100077 },
-    { "test_path": "tests/easy_2.txt", "test_name": "easy_2", "cost": 100038 }
-  ],
-  "medium": [
-    { "test_path": "tests/medium_0.txt", "test_name": "medium_0", "cost": 999916 },
-    { "test_path": "tests/medium_1.txt", "test_name": "medium_1", "cost": 999910 },
-    { "test_path": "tests/medium_2.txt", "test_name": "medium_2", "cost": 999963 }
-  ],
-  "hard": [
-    { "test_path": "tests/hard_0.txt", "test_name": "hard_0", "cost": 4999966 },
-    { "test_path": "tests/hard_1.txt", "test_name": "hard_1", "cost": 5000048 },
-    { "test_path": "tests/hard_2.txt", "test_name": "hard_2", "cost": 5000050 }
+    { "test_path": "tests/test_0.txt", "test_name": "test_0", "cost": 200000 },
+    { "test_path": "tests/test_1.txt", "test_name": "test_1", "cost": 200000 },
+    { "test_path": "tests/test_2.txt", "test_name": "test_2", "cost": 195000 },
+    { "test_path": "tests/test_3.txt", "test_name": "test_3", "cost": 1950000 },
+    { "test_path": "tests/test_4.txt", "test_name": "test_4", "cost": 1950000 },
+    { "test_path": "tests/test_5.txt", "test_name": "test_5", "cost": 1950000 }
   ]
 }

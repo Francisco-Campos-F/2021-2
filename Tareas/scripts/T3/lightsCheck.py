@@ -105,7 +105,6 @@ def build_graph_edges(graph, file_name):
         for i in range(amount_edges):
             line = f.readline()
             if line != "":
-                print(line)
                 pos_x, col_x, pos_y, col_y = int(line.split(' ')[0]), line.split(' ')[1], int(line.split(' ')[2]), line.split(' ')[3].strip('\n')
                 node_x = graph.binary_search_nodes(pos_x)
                 node_y = graph.binary_search_nodes(pos_y)
@@ -115,7 +114,6 @@ def build_graph_edges(graph, file_name):
                 if not node_x or not node_y:
                     print("Node not on original")
                     sys.exit(1)
-                print(node_x.col, node_y.col)
                 colors_equal_x = node_x.col == col_x.strip().lower()
                 colors_equal_y = node_y.col == col_y.strip().lower()
                 color_equal = colors_equal_x and colors_equal_y
