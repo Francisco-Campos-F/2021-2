@@ -3,8 +3,8 @@
     { "test_path": "tests/test_0.txt", "test_name": "test_0", "cost": 145000 },
     { "test_path": "tests/test_1.txt", "test_name": "test_1", "cost": 90000 },
     { "test_path": "tests/test_2.txt", "test_name": "test_2", "cost": 80500 },
-    { "test_path": "tests/test_3.txt", "test_name": "test_3", "cost": 5850000 },
-    { "test_path": "tests/test_4.txt", "test_name": "test_4", "cost": 3550000 },
+    { "test_path": "tests/test_3.txt", "test_name": "test_3", "cost": 585000 },
+    { "test_path": "tests/test_4.txt", "test_name": "test_4", "cost": 355000 },
     { "test_path": "tests/test_5.txt", "test_name": "test_5", "cost": 490000 }
   ]
 }
