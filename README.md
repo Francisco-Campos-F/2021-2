@@ -83,7 +83,7 @@ Bienvenido al sitio web del curso de Estructuras de Datos y Algoritmos. En esta 
 |   Ayudantía   |   12   | BFS, Dikstra y MST | 26/11  | [Grabación](https://www.youtube.com/watch?v=KlOvLEBp_hI)| [Diapos](https://github.com/IIC2133-PUC/2021-2/tree/master/Ayudant%C3%ADas/Ayudant%C3%ADa%2012%20-%20BFS%2C%20Dikstra%20y%20MST)|
 |   Clase   |   21   | Programacion Dinamica | 29/11  | [Grabación](https://youtu.be/dLF2BlqojwY)| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/19.%20ProgDin%C3%A1mica.pdf)|
 |   Clase   |   22   | Programacion Dinamica | 01/12  | [Grabación](https://www.youtube.com/watch?v=Ikb7w8PolNc
-)| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/master/Clases/19.%20ProgDin%C3%A1mica.pdf)|
+)| [Diapos](https://github.com/IIC2133-PUC/2021-2/blob/d0b770cd30526722f4c6d9e0d8581134e6dfb699/Clases/20.%20ProgDina%CC%81mica%20y%20Grafos.pdf)|
 ## Equipo
 ### Profesores
 | Nombre  | Sección | Email |
